@@ -28,7 +28,7 @@ class CreateBukuTable extends Migration
             $table->string('judul');
             $table->char('tahun_terbit', 4);
             $table->integer('jumlah');
-            $table->text('gambar');
+            $table->text('gambar')->nullable();
 
             $table->timestamps();
         });
