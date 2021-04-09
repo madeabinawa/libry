@@ -10,6 +10,7 @@
 
         {{-- stylesheet assets --}}
         <link rel="stylesheet" href="{{asset("css/app.css")}}">
+        <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet" />
         {{-- <link rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -35,16 +36,16 @@
                     </div>
 
                     <nav class="flex flex-col mt-10 px-4 text-center">
+                        <a href="{{route('buku.index')}}"
+                            class="{{(request()->is('buku')) ? 'bg-gray-200 text-gray-700' : ' text-gray-600'}} py-2 text-sm dark:text-gray-100 dark:bg-gray-800 rounded">Buku</a>
+                        <a href="{{route('penerbit.index')}}"
+                            class="{{(request()->is('penerbit')) ? 'bg-gray-200 text-gray-700' : ' text-gray-600'}} mt-3 py-2 text-sm dark:text-gray-100 dark:bg-gray-800 rounded">Penerbit</a>
+                        <a href="{{route('kategori.index')}}"
+                            class="{{(request()->is('kategori')) ? 'bg-gray-200 text-gray-700' : ' text-gray-600'}} mt-3 py-2 text-sm dark:text-gray-100 dark:bg-gray-800 rounded">Kategori</a>
                         <a href="#"
-                            class="py-2 text-sm text-gray-700 dark:text-gray-100 bg-gray-200 dark:bg-gray-800 rounded">Overview</a>
+                            class="{{(request()->is('transaksi')) ? 'bg-gray-200 text-gray-700' : ' text-gray-600'}} mt-3 py-2 text-sm dark:text-gray-100 dark:bg-gray-800 rounded">Contacts</a>
                         <a href="#"
-                            class="mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100  hover:bg-gray-200 dark:hover:bg-gray-800 rounded">Tickets</a>
-                        <a href="#"
-                            class="mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 rounded">Ideas</a>
-                        <a href="#"
-                            class="mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 rounded">Contacts</a>
-                        <a href="#"
-                            class="mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 rounded">Settings</a>
+                            class="{{(request()->is('user')) ? 'bg-gray-200 text-gray-700' : ' text-gray-600'}} mt-3 py-2 text-sm dark:text-gray-100 dark:bg-gray-800 rounded">Settings</a>
                     </nav>
                 </div>
 
@@ -59,8 +60,11 @@
                                 </svg>
                             </button>
 
+
                             <div>
-                                <h1 class="text-2xl font-medium text-gray-800 dark:text-white">Overview</h1>
+                                <h1 class="text-2xl font-medium text-gray-800 dark:text-white">
+                                    @yield('page-title')
+                                </h1>
                             </div>
                         </div>
 
@@ -148,6 +152,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
             integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
             crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
         @yield('javascript')
 
         @if (\Session::has('success'))
