@@ -19,4 +19,10 @@ class Kategori extends Model
     protected $fillable = [
         'jenis_kategori'
     ];
+
+    // RELATIONSHIP
+    public function buku()
+    {
+        return $this->hasMany(Buku::class);
+    }
 }
