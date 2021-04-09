@@ -1,6 +1,7 @@
 @extends('app')
 
 @section('title', 'Penerbit')
+@section('page-title', 'Daftar Penerbit')
 
 @section('main')
 
@@ -27,7 +28,7 @@
                         </tr>
                     </thead>
                     <tbody class="text-gray-600 text-sm font-light">
-                        @foreach ($data as $item)
+                        @forelse ($data as $item)
                         <tr class="border-b border-gray-200 bg-gray-50 hover:bg-gray-100">
                             <td class="py-3 px-6 text-left">
                                 <div class="flex items-center">
@@ -81,7 +82,15 @@
                                 </div>
                             </td>
                         </tr>
-                        @endforeach
+                        @empty
+                        <tr class="border-b border-gray-200 bg-transparent">
+                            <td class=" py-3 px-6 text-left">
+                                <div class="flex items-center">
+                                    <span class="font-medium">No records found.</span>
+                                </div>
+                            </td>
+                        </tr>
+                        @endforelse
                     </tbody>
                 </table>
             </div>
