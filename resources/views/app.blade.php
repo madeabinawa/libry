@@ -42,10 +42,6 @@
                             class="{{(request()->is('penerbit')) ? 'bg-gray-200 text-gray-700' : ' text-gray-600'}} mt-3 py-2 text-sm dark:text-gray-100 dark:bg-gray-800 rounded">Penerbit</a>
                         <a href="{{route('kategori.index')}}"
                             class="{{(request()->is('kategori')) ? 'bg-gray-200 text-gray-700' : ' text-gray-600'}} mt-3 py-2 text-sm dark:text-gray-100 dark:bg-gray-800 rounded">Kategori</a>
-                        <a href="#"
-                            class="{{(request()->is('transaksi')) ? 'bg-gray-200 text-gray-700' : ' text-gray-600'}} mt-3 py-2 text-sm dark:text-gray-100 dark:bg-gray-800 rounded">Contacts</a>
-                        <a href="#"
-                            class="{{(request()->is('user')) ? 'bg-gray-200 text-gray-700' : ' text-gray-600'}} mt-3 py-2 text-sm dark:text-gray-100 dark:bg-gray-800 rounded">Settings</a>
                     </nav>
                 </div>
 
@@ -102,7 +98,7 @@
                             <div x-data="{ dropdownOpen: false }" class="relative">
                                 <button @click="dropdownOpen = ! dropdownOpen"
                                     class="flex items-center space-x-2 relative focus:outline-none">
-                                    <h2 class="text-gray-700 dark:text-gray-300 text-sm hidden sm:block">Jones Ferdinand
+                                    <h2 class="text-gray-700 dark:text-gray-300 text-sm hidden sm:block">Admin
                                     </h2>
                                     <div class="h-9 w-9 rounded-full border-2 border-purple-500 object-cover"></div>
                                 </button>
@@ -117,8 +113,6 @@
                                     x-transition:leave-end="opacity-0 scale-95" @click.away="dropdownOpen = false">
                                     <a href="#"
                                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white">Profile</a>
-                                    <a href="#"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white">Tickets</a>
                                     <button
                                         class="block px-4 py-2 text-sm text-left text-gray-700 hover:bg-purple-600 hover:text-white w-full"
                                         onclick="event.preventDefault(); getElementById('logout-form').submit()">Logout</button>
