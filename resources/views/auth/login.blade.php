@@ -44,10 +44,9 @@
                                     </div>
                                 </form>
                                 <div class="text-center mt-4">
-                                    <a class="no-underline hover:underline text-blue-dark text-xs"
-                                        href="{{ route('password.request') }}">
-                                        Forgot Your Password?
-                                    </a>
+                                    <div class="text-xs text-grey-dark">
+                                        admin@mail.com | 123456
+                                    </div>
                                 </div>
 
                                 @if ($errors->any())
